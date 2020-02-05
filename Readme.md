@@ -1,6 +1,7 @@
 # CameraXCrash
 Demonstrates a crash that occurs when using the CameraX `CameraView` in a fragment due to a buffer queue
-being abandoned.
+being abandoned. This example uses `bindToLifecycle` and passes the fragment as the `LifecycleOwner`. I did do some limited debugging into this and it seems like the lifecycle observer in `CameraXModule` isn't getting
+an onDestroy callback when the fragment is put on the backstack.
 
 ## Steps to reproduce
 1. Open the app and approve the camera permission
@@ -12,9 +13,6 @@ Expected: the screen appears as it did in step 1 after the camera permission was
 Actual: the app crashes
 
 ## Details of unexpected behavior
-
-I did do some limited debugging into this and it seems like the lifecycle observer in `CameraXModule` isn't getting
-an onDestroy callback when the fragment is put on the backstack.
 
 Stacktrace of crash:
 ```
