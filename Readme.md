@@ -7,7 +7,7 @@ being abandoned.
 2. Click the "take picture" button to navigate to the next screen
 3. Click the back button
 
-Expected: the screen appears as it did in step 1 aft er the camera permission was approved
+Expected: the screen appears as it did in step 1 after the camera permission was approved
 
 Actual: the app crashes
 
